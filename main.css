@@ -365,13 +365,7 @@
 	margin-left : 50px;
 	margin-top : 15px;
 }
-.social{
-	display:inline-block;
-	position : relative;
-	margin-left : 250px;
-	margin-right : 250px;
-	margin-top : 15px;
-	}
+
 #socialimg{
 	background-color : silver;
 	border : 0.5px solid transparent;
@@ -383,11 +377,6 @@
 #socialimg:hover{
 	background-color : white;
 	border : 1px solid silver;
-}
-.contact{
-	float : right;
-	margin-right : 50px;
-	margin-top : 15px;
 }
 .login{
 	width : 100%;
@@ -467,5 +456,18 @@
 	color : #008080;
 	font-weight : bold;
 	text-align : center;
-	
+}
+.footer{
+	border-bottom : 2px solid rgba(0,0,0,0.3);
+	border-bottom-width : 70px;
+	height : 50px;
+	background-color : #272727;
+	margin-top : 550px;
+	padding-top : 10px;
+}
+.design,.social,.contact{
+	position : relative;
+}
+#socialimg{
+	margin-top : 25px;
 }
