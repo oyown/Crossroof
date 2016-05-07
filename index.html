@@ -3,6 +3,9 @@
 <html lang = "en">
 <head>
 <title>Crossroof</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script> 
+<script src="jquery.localscroll.js" type="text/javascript"></script> 
+<script src="jquery.scrollTo.js" type="text/javascript"></script>
 <link rel = "stylesheet" href = "main.css" type = "text/css">
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
 <link rel = "stylesheet" href = "mymodal.css"/>
@@ -47,14 +50,13 @@
 <br><br>
 <p id ="quote">The best hospitals across<br>the country for your needs.<br>Choose them based on<br>specialisation or by location.</p>
 </a>
-<a name = "Doctors" style = "margin : 0; padding : 0; border : 1px solid transparent"></a>
+
 </div>
 
 <!--DOCTORS-->
-<a name = "Doctors"></a>
 <div class = "content2-doctors">
-
-<img id = "docpic" src = "e.jpg">
+<div><a name = "Doctors"></div>
+<img id = "docpic" src = "e.jpg"></img>
 <span id = "doccont">
 <form>
 <input type = "text" placeholder = "Doctors" title = "Click Here" id = "doclist" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Doctors'"></input>
@@ -71,7 +73,7 @@
 
 <!--ORGANS-->
 
-<div class = "content2-organs">
+<div class = "content2-organs"><div></div>
 <a name = "Organs" style = "border : 18px solid transparent; position :absolute; margin : 0; padding : 0; top : -150px;"></a>
 <img id = "orgpic" src = "img16.jpg">
 <span id = "orgcont">
@@ -111,7 +113,7 @@
 <h1>SIGN IN</h1>
 <p><input type = "text" placeholder = "Username" title = "Username" id = "username1" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'"></input>
 <input type = "password" placeholder = "Password" title = "Password" id = "password1" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'"></input>
-<a id = "signin" href = "#">Sign In</a><br></br>
+<a id = "signin" href = "#">Sign In</a> &nbsp &nbsp <a href= "#" id = "forgot" style = "text-decoration : none; color :#008080">Forgot Password</a><br></br>
 New Member?&nbsp <a id = "signup" style = "text-decoration : none;color : #008080; cursor : pointer;">Create Account</a>
 </p>
 </center>
@@ -204,8 +206,38 @@ We are a team of four bent<br>on making a dent in the universe. <a href = "#"sty
 	<center>
 	<h3 style = "padding : 15px;">REGISTRATION</h3>
 	<hr></hr>
-	<input type = "text" placeholder = "First Name"id = "modalinput"></input>&nbsp &nbsp <input type = "text" placeholder = "Last Name"id = "modalinput"></input><br><input type = "text" placeholder = "City"id = "modalinput"></input>&nbsp &nbsp <input type = "text" placeholder = "State"id = "modalinput"></input><br><input type = "number" placeholder = "Mobile Number"id = "modalinput"></input>&nbsp &nbsp <input type = "text" placeholder = "Blood Group" id = "modalinput"></input><br><input type = "email" placeholder = "Email"id = "modalinput"></input>&nbsp &nbsp <input type = "password" placeholder = "Password"id = "modalinput"></input><br></br>
-	<a href = "#"><button id = "submit">Submit</button></a>
+	<input type = "text" placeholder = "First Name"id = "modalinput"></input>&nbsp &nbsp <input type = "text" placeholder = "Last Name"id = "modalinput"></input>
+	<br>
+	<select name = "Gender" id = "selectinput">
+		<option value="" disabled selected>Select Gender</option>
+		<option value="male">Male</option>
+		<option value="female">Female</option>
+		<option value="other">Other</option>
+	</select>
+	
+	&nbsp &nbsp <input type = "date" placeholder = "Date of Birth" title = "Date of Birth"id = "modalinput"></input>
+	<br>
+	<input type = "text" placeholder = "City"id = "modalinput"></input>&nbsp &nbsp <input type = "text" placeholder = "State"id = "modalinput"></input>
+	<br>
+	<input type = "number" maxlength = "10" placeholder = "Mobile Number"id = "modalinput"></input>&nbsp &nbsp 
+	
+	<select name = "Gender" id = "selectinput">
+		<option value="" disabled selected>Select Blood Group</option>
+		<option value="male">A+</option>
+		<option value="female">B+</option>
+		<option value="other">O+</option>
+		<option value="male">AB+</option>
+		<option value="female">A-</option>
+		<option value="other">B-</option>
+		<option value="male">O-</option>
+		<option value="female">AB-</option>
+	</select>
+	
+	</input>
+	<br>
+	<input type = "email" placeholder = "Email"id = "modalinput"></input>&nbsp &nbsp <input type = "password"  placeholder = "Password"id = "modalinput"></input><br>
+	</br>
+	<input type = "submit" id = "submit">
 	</center>
 	
   </div>
@@ -237,6 +269,12 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+//--------------------------------SCROLLING EFFECT---------------------------------------//
+<script type="text/javascript">
+$(document).ready(function() {
+   $('#content').localScroll({duration:1200});
+});
+</script>
 </script>
 </body>
 </html>
