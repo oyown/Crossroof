@@ -1,280 +1,350 @@
 <!DOCTYPE html>
-
-<html lang = "en">
+<html lang="en">
 <head>
-<title>Crossroof</title>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script> 
-<script src="jquery.localscroll.js" type="text/javascript"></script> 
-<script src="jquery.scrollTo.js" type="text/javascript"></script>
-<link rel = "stylesheet" href = "main.css" type = "text/css">
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
-<link rel = "stylesheet" href = "mymodal.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="teal">
+    <title>Crossroof</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <!--<link rel="stylesheet" media = "screen and (max-width:768px)" href="css/mobile-style.css"/>-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons" rel="stylesheet">
+    <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js"></script>-->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="js/script.js"></script>
 </head>
-<body style = "background-color : white; margin : 0; padding : 0;font-family : 'Corbel','Calibri', 'Arial'">
+<body>
+<div class="body-shadow" onclick="darkBody()"></div>
+<div class="focus-shadow" onclick="darkFocus()"></div>
+<div class="body-transparent"></div>
 <div class = "header">
-<p id ="content">
-<a href = "#Home" style = "position : relative; width : 230px; height : 50px;top : 15px; right : 50px;margin : 0; padding : 0; border : 2px solid transparent;"><img src = "crossroof smal greenl.png"></a>
-<p id = "call">Emergency Call : (+91)8013231658</p>
-<p class = "navbar">
-<a href = "#Hospital">Hospitals</a>
-<a href = "#Doctors">Doctors</a>
-<a href = "#Organs">Donations</a>
-<a href = "#We">We</a>
-<a href = "#Log In">Log In</a>
-</p>
-</p>
+    <div class="row clearfix">
+        <div class="menu">
+            <div class="mobile-only">
+                <div class="fixed-nav-bar">
+                    <div class="nav-button">
+                        <i onclick="menuShow()" class="material-icons material-spec-icon" title="Show Navigation">menu</i>
+                    </div>
+                    <div class="account-button">
+                        <i class="material-icons material-spec-icon" title="Account">account_circle</i>
+                    </div>
+                    <div class="login-menu-wrap">
+                        <div class="login-menu-arrow"></div>
+                        <div class="login-menu shown">
+                            <ul class="login-menu-items">
+                                <li><a href="#">Login</a></li>
+                                <li><a href="#">Sign Up</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="fixed-menu-title">
+                        Crossroof
+                    </div>
+                </div>
+            </div>
+            <div class="logo col-3">
+                <h1 class="logo-h1">Crossroof</h1>
+            </div>
+        </div>
+        <div class="nav-sidebar">
+            <div class="sidebar-header mobile-only">
+                <img class="sidebar-header-image logo-h1" src="images/crossroof%20smal%20greenl.png"/>
+            </div>
+            <div class="nav-menu col-6">
+                <ul>
+                    <li onclick="darkBody()"><a href="#hospital">Hospitals</a></li>
+                    <li onclick="darkBody()"><a href="#doctor">Doctors</a></li>
+                    <li onclick="darkBody()"><a href="#donation">Donations</a></li>
+                    <li class="desktop-only"><a href="#">Log In</a></li>
+                    <li class="my-account mobile-only">My Account<span class="material-icons material-spec-icon menu-indicator">keyboard_arrow_right</span></li>
+                    <div class="sub-menu mobile-only">
+                        <li onclick="darkBody()">Log In</li>
+                        <li onclick="darkBody()">Sign Up</li>
+                    </div>
+                    <li onclick="darkBody()"><a href="#about-us-slider">About</a></li>
+                </ul>
+            </div>
+            <div class="contact col-3">
+                <p>Emergency Contact</p>
+                <p>+91-8023451238</p>
+            </div>
+            <div class="mobile-only sidebar-footer">
+                <p>Crossroof ©</p>
+                <a href="#">Site Feedback</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+            </div>
+        </div>
+    </div>
 </div>
-
-<a name = "Home"><div class = "content1">
-<img src = "1410739_10152112492305786_1415177393_o.png">
-<center>
-<form >
-<h1>I am from</h1><br>
-<input type = "text" placeholder = "select state" name = "state" id = "state" onfocus="this.placeholder = ''" onblur="this.placeholder = 'select state'" ></input>
-</form>
-</center>
-</div></a>
-
-<div class = "Con1foot">
-<center><h1>I want to see</h1></center>
+<div class="content clearfix">
+    <div class="grid_outer">
+        <div class="state-search col-12">
+            <div class="state-content">
+                <h1>I am from</h1>
+                <input class="desktop-only" type="text" placeholder="select state" onfocus="this.placeholder=''" onblur="this.placeholder='select state'">
+                <input class="mobile-only" type="text" placeholder="SELECT STATE" onfocus="this.placeholder=''" onblur="this.placeholder='SELECT STATE'">
+            </div>
+        </div>
+        <div class="clearfix">
+            <div class="banner-1 col-12">
+                <h1>I want to see</h1>
+            </div>
+        </div>
+        <div class="main-content clearfix">
+            <div class="hospital card row-1 clearfix search-focus" id="hospital">
+                <div class="card-input">
+                    <input type="text">
+                    <i class="material-icons material-spec-icon search-close-button" title="Cancel">close</i>
+                </div>
+                <div class="hosp-image card-image not-tablet col-6">
+                    <img id="hospital-image" src="images/hospital_new.jpg">
+                </div>
+                <div class="hosp image-back"></div>
+                <div class="hospital-info card-content col-6">
+                    <div class="hosp-content">
+                        <input class="desktop-only" type="text" placeholder="Hospital" onfocus="this.placeholder=''" onblur = "this.placeholder='Hospital'">
+                        <div class="mobile-only content-title">
+                            <div class="card-content-title">
+                                <h1 class="search-input-title">Hospital</h1>
+                            </div>
+                            <i class="material-icons material-spec-icon card-search-button" id='card-search-button' title="Search">search</i>
+                        </div>
+                        <p class="desktop-only">The best hospitals across<br>the country for your needs.<br>Choose them based on<br>specialisation or by location.</p>
+                        <p class="mobile-only">The best hospitals across the country for your needs.</p>
+                        <div class="mobile-only card-buttons">EXPLORE</div>
+                    </div>
+                </div>
+            </div>
+            <div class="doctor card row-2 clearfix search-focus" id="doctor">
+                <div class="doc-image mobile-only card-image not-tablet col-6">
+                    <img id="doctor-image-mobile" src="images/doctor_new.jpg">
+                </div>
+                <div class="doc image-back"></div>
+                <div class="doctor-info card-content col-6">
+                    <div class="doc-content">
+                        <input class="desktop-only" type="text" placeholder="Doctors" onfocus="this.placeholder=''" onblur = "this.placeholder='Doctors'" >
+                        <div class="mobile-only content-title">
+                            <div class="card-input">
+                                <input type="text">
+                                <i class="material-icons material-spec-icon search-close-button" title="Cancel">close</i>
+                            </div>
+                            <div class="card-content-title">
+                                <h1 class="search-input-title">Doctor</h1>
+                            </div>
+                            <i class="material-icons material-spec-icon card-search-button" title="Search">search</i>
+                        </div>
+                        <div class="radio-buttons">
+                            <div class="private-radio-button"><input id="private" type="radio" name="doc-radio">
+                                <label for='private'>Private</label></div>
+                            <div class="hospital-radio-button"><input id="hosp" type="radio" name="doc-radio">
+                                <label for="hosp">Hospital</label></div>
+                        </div>
+                        <p class="desktop-only">Get invaluable advice from<br> professionals in the field.<br> Find doctors associated with <br>prestigious hospitals.</p>
+                        <p class="mobile-only">Get invaluable advice from professionals in the field. Find doctors associated with prestigious hospitals.</p>
+                        <div class="mobile-only card-buttons">EXPLORE</div>
+                    </div>
+                </div>
+                <div class="doc-image desktop-only col-6">
+                    <img id="doctor-image" src="images/doctor-org.jpg">
+                </div>
+            </div>
+            <div class="donation card row-3 clearfix search-focus" id="donation">
+                <div class="don-image card-image not-tablet col-6">
+                    <!--<div class="image-black"></div>-->
+                    <img id="donation-image" src="images/donation.jpg">
+                </div>
+                <div class="don image-back"></div>
+                <div class="donation-info card-content col-6">
+                    <div class="don-content">
+                        <input class="desktop-only" type="text" placeholder="Donation" onfocus="this.placeholder=''" onblur = "this.placeholder='Donation'">
+                        <div class="mobile-only content-title">
+                            <div class="card-input">
+                                <input type="text">
+                                <i class="material-icons material-spec-icon search-close-button" title="Cancel">close</i>
+                            </div>
+                            <div class="card-content-title">
+                                <h1 class="search-input-title">Donation</h1>
+                            </div>
+                            <i class="material-icons material-spec-icon card-search-button" title="Search">search</i>
+                        </div>
+                        <p class="desktop-only">Other than providing the<br> best doctors and hospitals,<br> we also provide centres for <br>organ and blood donation.</p>
+                        <p class="mobile-only">Other than providing the best doctors and hospitals, we also provide centres for organ and blood donation.</p>
+                        <div class="mobile-only card-buttons">EXPLORE</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-<!--HOSPITALS-->
-
-<div class = "content2-hospitals">
-<a name = "Hospital" style ="position : relative; top : -230px; width : 100%; min-height : 400px;">
-<img id = "hospic" src = "img1_2.jpg">
-<form>
-<input type = "text" placeholder = "Hospitals" title = "Click Here" id = "hosplist" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Hospitals'"></input>
-</form>
-<br><br>
-<p id ="quote">The best hospitals across<br>the country for your needs.<br>Choose them based on<br>specialisation or by location.</p>
-</a>
-
+<div class="banner-2 col-12 desktop-only">
+    <div class="features">
+        <h1>Extra Features</h1>
+        <div class="row clearfix">
+            <div class="support col-4 col-4-m">
+                <img id="support-icon" src="images/icon4.png">
+                <h3>24X7 Customer Support</h3>
+                <p>We are always here to help you.<br>Call or E-mail to let us<br> know about your queries or complaints.</p>
+            </div>
+            <div class="recc col-4 col-4-m">
+                <img id="recc-icon" src="images/doc.png">
+                <h3 class="desktop-only">Doctor Recommendations</h3>
+                <p class="desktop-only">Unsure about which doctor to visit?<br> Let us know and we'll give you<br> a personalised recommendation.</p>
+            </div>
+            <div class="appointments col-4 col-4-m">
+                <img id="appointments-icon" src="images/app.png">
+                <h3>Appointments</h3>
+                <p>Cannot schedule appointments?<br> Give us a call and we'll figure it out.</p>
+            </div>
+        </div>
+    </div>
 </div>
-
-<!--DOCTORS-->
-<div class = "content2-doctors">
-<div><a name = "Doctors"></div>
-<img id = "docpic" src = "e.jpg"></img>
-<span id = "doccont">
-<form>
-<input type = "text" placeholder = "Doctors" title = "Click Here" id = "doclist" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Doctors'"></input>
-<span id = "button"><input type = "radio" name = "doctype" value = "Private">Private</input> &nbsp <input type = "radio" name = "doctype" value = "Hospital">Hospital</input></span>
-</form>
-
-<br><br>
-<p id ="quote2">Get invaluable advice from<br> professionals in the field.<br> Find doctors associated with <br>prestigious hospitals.</p>
-</span>
-
+<div class="clearfix desktop-only">
+    <div class="banner-3 col-12">
+        <div class="user">
+            <h1>Sign In</h1>
+            <div class="sign-in card">
+                <input type="text" placeholder="Username" value="">
+                <input type="password" placeholder="Password" value="">
+                <button type="button" value="">Sign In</button>
+                <a href="#">Forgot Password</a>
+            </div><br>
+            <p>New Member? <a href="#">Create Account</a></p>
+        </div>
+    </div>
 </div>
-
-<!--DOCTORS-->
-
-<!--ORGANS-->
-
-<div class = "content2-organs"><div></div>
-<a name = "Organs" style = "border : 18px solid transparent; position :absolute; margin : 0; padding : 0; top : -150px;"></a>
-<img id = "orgpic" src = "img16.jpg">
-<span id = "orgcont">
-<form>
-<input type = "text" placeholder = "Donations" title = "Click Here" id = "orglist" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Donations'"></input>
-<span id = "button2"><input type = "radio" name = "orgtype" value = "Blood">Blood</input> &nbsp <input type = "radio" name = "orgtype" value = "Organs">Organs</input></span>
-</form>
-<br><br>
-<p id ="quote3">Other than providing the<br> best doctors and hospitals,<br> we also provide centres for <br>organ and blood donation.</p>
-</span>
+<div class="about-us-toggle piano-key mobile-only">
+    <div class="content">
+        <h1>About Us</h1>
+    </div>
 </div>
-<!--ORGANS-->
-<!--Extra-->
-<div class = "content3">
-<img src = "slid.jpg">
-<div id = "features">
-<center><p id="extra">Extra Features</p></center>
-<p id = "featuredown">
-<div id = "Cust"><a name = "We"></a>
-<img src = "icon4.png"><p id="header">24X7 Customer support</p>
-<p>We are always here to help you.<br>Call or E-mail to let us<br> know about your queries or complaints.</p></div>
-<center><div id = "docs">
-<img src = "icon3.png"><p id="header">Doctor Recommendations</p>
-<p>Unsure about which doctor to visit?<br> Let us know and we'll give you<br> a personalised recommendation.</p>
-</div></center>
-<div id ="hosp">
-<img src = "icon2.png"><p id="header">Appointments</p>
-<p>Cannot schedule appointments?<br> Give us a call and we'll figure it out.</p>
+<div class="banner-4 row desktop-only clearfix">
+    <div class="about-us" id="about-us">
+        <h1>About Us</h1>
+        <div class="person-1 team col-3">
+            <img id="dp-1" src="">
+            <p>Name 1</p>
+            <p>Role</p>
+        </div>
+        <div class="person-2 team col-3">
+            <img id="dp-2" src="">
+            <p>Name 2</p>
+            <p>Role</p>
+        </div>
+        <div class="person-3 team col-3">
+            <img id="dp-3" src="">
+            <p>Name 3</p>
+            <p>Role</p>
+        </div>
+        <div class="person-4 team col-3">
+            <img id="dp-4" src="">
+            <p>Name 4</p>
+            <p>Role</p>
+        </div>
+    </div>
 </div>
-</p>
+<div class="banner-4 row clearfix mobile-only">
+    <div class="slide about-us about-us-resize" id="about-us-slider">
+        <div class="person-1 team-m card is-paused" id="team-m-1">
+            <div class="person-image image-1" style="background: url('https://scontent-sin6-1.xx.fbcdn.net/v/t1.0-9/15542358_1210810342331011_5060320959578196144_n.jpg?oh=526b1f5fa93655781aaddb2291a05b68&oe=59223FDA') no-repeat; background-size: cover"></div>
+            <div class="person-content content-1">
+                <div class="person-wrapper">
+                    <h1>Archita Patadia</h1>
+                    <p>PHP Developer</p>
+                </div>
+                <div class="person-social">
+                    <a href="#"><img src="images/gmt.png"/></a>
+                    <a href="#"><img src="images/facebook-grey.png"/></a>
+                    <a href="#"><img src="images/linkedin-grey.png"/></a>
+                    <a href="#"><img src="images/github-grey.png"/></a>
+                </div>
+            </div>
+            <div class="person-social person-social-tablet">
+                <a href="#"><img src="images/gmt.png"/></a>
+                <a href="#"><img src="images/github-grey.png"/></a>
+                <a href="#"><img src="images/linkedin-grey.png"/></a>
+            </div>
+        </div>
+        <div class="person-2 team-m card is-paused" id="team-m-2">
+            <div class="person-image image-2" style="background: url('https://scontent.fccu2-1.fna.fbcdn.net/v/t1.0-9/15285004_788364541306578_2428071897458061726_n.jpg?oh=774a6fe452780f619455edaa1efe153a&oe=58DC5011') no-repeat; background-size: cover"></div>
+            <div class="person-content content-2">
+                <div class="person-wrapper">
+                    <h1>Puja Choudhary</h1>
+                    <p>PHP Developer</p>
+                </div>
+                <div class="person-social">
+                    <a href="#"><img src="images/gmt.png"/></a>
+                    <a href="#"><img src="images/facebook-grey.png"/></a>
+                    <a href="#"><img src="images/linkedin-grey.png"/></a>
+                    <a href="#"><img src="images/github-grey.png"/></a>
+                </div>
+            </div>
+            <div class="person-social person-social-tablet">
+                <a href="#"><img src="images/gmt.png"/></a>
+                <a href="#"><img src="images/github-grey.png"/></a>
+                <a href="#"><img src="images/linkedin-grey.png"/></a>
+            </div>
+        </div>
+        <div class="person-3 team-m card is-paused" id="team-m-3">
+            <div class="person-image image-3" style="background: url('https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQEJKWBxGuOzyAZ-WH52-k2jqDz9lohmuDUC3Fizn_FxHbHplXrk9V0UaGC') no-repeat; background-size: cover"></div>
+            <div class="person-content content-3">
+                <div class="person-wrapper">
+                    <h1>Shafquat Almas</h1>
+                    <p>PHP Developer</p>
+                </div>
+                <div class="person-social">
+                    <a href="#"><img class="svg" src="images/gmt.png"/></a>
+                    <a href="#"><img class="svg" src="images/facebook-grey.png"/></a>
+                    <a href="#"><img class="svg" src="images/linkedin-grey.png"/></a>
+                    <a href="#"><img src="images/github-grey.png"/></a>
+                </div>
+            </div>
+            <div class="person-social person-social-tablet">
+                <a href="#"><img src="images/gmt.png"/></a>
+                <a href="#"><img src="images/github-grey.png"/></a>
+                <a href="#"><img src="images/linkedin-grey.png"/></a>
+            </div>
+        </div>
+        <div class="person-4 team-m card is-paused" id="team-m-4">
+            <div class="person-image image-4" style="background: url('https://scontent-sin6-1.xx.fbcdn.net/v/t1.0-9/fr/cp0/e15/q65/15977733_1242473112489067_8444671105304306625_n.jpg?efg=eyJpIjoidCJ9&oh=994c9d3d8369474a1e88740d6e6c78bc&oe=591EFF9B') no-repeat; background-size: cover"></div>
+            <div class="person-content content-4">
+                <div class="person-wrapper">
+                    <h1>Ayan Banerjee</h1>
+                    <p>UI/UX Designer</p>
+                </div>
+                <div class="person-social">
+                    <a href="#"><img src="images/gmt.png"/></a>
+                    <a href="#"><img src="images/facebook-grey.png"/></a>
+                    <a href="#"><img src="images/linkedin-grey.png"/></a>
+                    <a href="#"><img src="images/github-grey.png"/></a>
+                </div>
+            </div>
+            <div class="person-social person-social-tablet tablet-only">
+                <a href="#"><img src="images/gmt.png"/></a>
+                <a href="#"><img src="images/github-grey.png"/></a>
+                <a href="#"><img src="images/linkedin-grey.png"/></a>
+            </div>
+        </div>
+        <!--<div class="prev-btn slide-btn mobile-only"><i class="material-icons material-spec-icon">keyboard_arrow_left</i></div>
+        <div class="next-btn slide-btn mobile-only"><i class="material-icons material-spec-icon">keyboard_arrow_right</i></div>-->
+    </div>
 </div>
+<div class="footer">
+    <div class="row clearfix">
+        <div class="reg col-3 desktop-only">
+            <a href="#">Registered|2016-17</a>
+        </div>
+        <div class="social col-6">
+            <a href="#"><img id="google" src="http://sparkplug911.github.io/Crossroof/Google.png"></a>
+            <a href="#"><img id="github" src="http://sparkplug911.github.io/Crossroof/Github.png"></a>
+            <a href="#"><img id="facebook" src="http://sparkplug911.github.io/Crossroof/Facebook.png"></a>
+        </div>
+        <div class="social-contact col-3">
+            <p>Call Us: (+91)8765430978</p>
+            <p>Mail us: <a href="#">contact@contact.com</a></p>
+        </div>
+    </div>
 </div>
-
-<!--Extra-->
-<a name = "Log In"><div class = "login"></a>
-<center>
-<h1>SIGN IN</h1>
-<p><input type = "text" placeholder = "Username" title = "Username" id = "username1" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'"></input>
-<input type = "password" placeholder = "Password" title = "Password" id = "password1" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'"></input>
-<a id = "signin" href = "#">Sign In</a> &nbsp &nbsp <a href= "#" id = "forgot" style = "text-decoration : none; color :#008080">Forgot Password</a><br></br>
-New Member?&nbsp <a id = "signup" style = "text-decoration : none;color : #008080; cursor : pointer;">Create Account</a>
-</p>
-</center>
-</div>
-<div>
-<div class = "about">
-<h2 style = "text-align : center; margin-top : 20px; text-decoration : underline;">About Us</h2>
-<div id = "onep" class = "first">
-	<img src = "pp (3).jpg">
-	<h4>Shafquat Almas</h4>
-	<p>Developer</p>
-</div>
-<div id = "onep" class = "second">
-	<img src = "puja.jpg">
-	<h4>Puja Choudhury</h4>
-	<p>Developer</p>
-</div>
-<div id = "onep" class = "third">
-	<img src = "Archita.jpg">
-	<h4>Archita Patadia</h4>
-	<p>Developer</p>
-</div>
-<div id = "onep" class = "fourth">
-	<img src = "profilepic.jpg">
-	<h4>Ayan Banerjee</h4>
-	<p>UI/UX Designer</p>
-</div>
-</div>
-</div>
-<div class = "footer">
-<div class = "design" style = "float : left; margin-left : 25px; margin-right : 430px; margin-top : 40px;"><p><a href= "#" style = "text-decoration : none"><span style = "font-weight : bold; color : #008080;">Sparkplug<span style = "font-family : 'Calibri'">911 | 2016</span></span></a></p></div>
-<div class = "social">
-<a href = "https://www.facebook.com/vince.lee.378" style = "text-decoration: none;" title = "Facebook" target = "facebook">
-<li style = "display : inline-block; float : left;">
-<img src = "Facebook.png" id = "socialimg">
-</li>
-</a>
-<a href = "mailto:ayan7414@gmail.com" style = "text-decoration: none;"title = "Gmail" target = "facebook" >
-<li style = "display : inline-block; float : left;">
-<img src = "Google.png" id = "socialimg">
-</li>
-</a>
-<a href = "https://github.com/SparkPlug911/Crossroof" style = "text-decoration: none;" title = "Github" target = "facebook" >
-<li style = "display : inline-block; float : left;">
-<img src = "Github.png" id = "socialimg">
-</li>
-</a>
-</div>
-<div class = "contact" style = "float : right;margin-top : 30px; margin-right : 25px; color : silver">
-<p>Call Us : <span style = "font-weight : bold">(+91)8965412325</span></p>
-<p>Mail Us : <span style = "font-weight : bold; text-decoration : underline"><a href = "mailto:contact@crossroof.com" style = "color : white; text-decoration : none">contact@crossroof.com</a></span></p>
-</div>
-</div>
-
-
-<!--<div class = "We">
-<p>
-<div id = "wecontent">
-<div class = "about">
-We are a team of four bent<br>on making a dent in the universe. <a href = "#"style = "color : white;text-decoration:none; font-weight : bold;">Know More</a>
-</div>
-<div class = "social">
-<a href = "https://www.facebook.com/vince.lee.378" style = "text-decoration: none;" title = "Facebook" target = "facebook">
-<li style = "display : inline-block; float : left;">
-<img src = "Facebook.png" id = "socialimg">
-</li>
-</a>
-<a href = "mailto:ayan7414@gmail.com" style = "text-decoration: none;"title = "Gmail" target = "facebook" >
-<li style = "display : inline-block; float : left;">
-<img src = "Google.png" id = "socialimg">
-</li>
-</a>
-<a href = "https://github.com/SparkPlug911" style = "text-decoration: none;" title = "Github" target = "facebook" >
-<li style = "display : inline-block; float : left;">
-<img src = "Github.png" id = "socialimg">
-</li>
-</a>
-</div>
-<div class = "contact">
-<p>Call Us : <span style = "font-weight : bold">(+91)8965412325</span></p>
-<p>Mail Us : <span style = "font-weight : bold; text-decoration : underline"><a href = "mailto:contact@crossroof.com" style = "color : white; text-decoration : none">contact@crossroof.com</a></span></p>
-</div>
-</div>
-</p>
-</div>-->
-<div id="myModal" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content" id="content">
-    <span class="close">X</span>
-	<center>
-	<h3 style = "padding : 15px;">REGISTRATION</h3>
-	<hr></hr>
-	<input type = "text" placeholder = "First Name"id = "modalinput"></input>&nbsp &nbsp <input type = "text" placeholder = "Last Name"id = "modalinput"></input>
-	<br>
-	<select name = "Gender" id = "selectinput">
-		<option value="" disabled selected>Select Gender</option>
-		<option value="male">Male</option>
-		<option value="female">Female</option>
-		<option value="other">Other</option>
-	</select>
-	
-	&nbsp &nbsp <input type = "date" placeholder = "Date of Birth" title = "Date of Birth"id = "modalinput"></input>
-	<br>
-	<input type = "text" placeholder = "City"id = "modalinput"></input>&nbsp &nbsp <input type = "text" placeholder = "State"id = "modalinput"></input>
-	<br>
-	<input type = "number" maxlength = "10" placeholder = "Mobile Number"id = "modalinput"></input>&nbsp &nbsp 
-	
-	<select name = "Gender" id = "selectinput">
-		<option value="" disabled selected>Select Blood Group</option>
-		<option value="male">A+</option>
-		<option value="female">B+</option>
-		<option value="other">O+</option>
-		<option value="male">AB+</option>
-		<option value="female">A-</option>
-		<option value="other">B-</option>
-		<option value="male">O-</option>
-		<option value="female">AB-</option>
-	</select>
-	
-	</input>
-	<br>
-	<input type = "email" placeholder = "Email"id = "modalinput"></input>&nbsp &nbsp <input type = "password"  placeholder = "Password"id = "modalinput"></input><br>
-	</br>
-	<input type = "submit" id = "submit">
-	</center>
-	
-  </div>
-
-</div>
-
-<script>
-// Get the modal
-var modal = document.getElementById('myModal');
-
-// Get the button that opens the modal
-var btn = document.getElementById("signup");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-//--------------------------------SCROLLING EFFECT---------------------------------------//
-<script type="text/javascript">
-$(document).ready(function() {
-   $('#content').localScroll({duration:1200});
-});
-</script>
-</script>
 </body>
 </html>
